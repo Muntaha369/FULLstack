@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const URI="mongodb://localhost:27017";
+const URI = process.env.Mongo_db;
 
 const ConnectDb = async()=>{
   try {
