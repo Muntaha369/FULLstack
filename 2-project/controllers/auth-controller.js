@@ -43,7 +43,8 @@ const login = async(req,res)=>{
    if(!UserExist){
      return res.status(400).json({msg: "Please Sign up first"})
    }
-   const isPasswordValid = await bcrypt.compare(password, UserExist.password);
+
+  const isPasswordValid = await UserExist.comparePassword(password);
  
      if (!isPasswordValid) {
        return res.status(401).json({ msg: "Invalid credentials" });
