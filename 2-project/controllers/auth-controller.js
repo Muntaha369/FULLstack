@@ -29,7 +29,7 @@ const register = async(req,res)=>{
       UserId: UserCreated._id.toString(),
     })
   } catch (error) {
-    res.status(404).send({msg: "Something is wrong"})
+    res.status(404).json({msg: "Something is wrong"})
   }
 }
 
